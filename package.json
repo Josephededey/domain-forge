@@ -1,0 +1,29 @@
+{
+  "name": "domainforge",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Portfolio-grade domain search and demo-order platform (simulated provider).",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "test": "npm test -w server",
+    "build": "npm run build -w client",
+    "e2e": "playwright test",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "audit": "npm audit --omit=dev --audit-level=high",
+    "screenshots": "playwright test -c playwright.screenshots.config.js",
+    "deploy:web": "npm run deploy -w client"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.48.0"
+  }
+}

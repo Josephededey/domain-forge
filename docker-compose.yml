@@ -1,0 +1,16 @@
+# Local development database only. Credentials are throwaway placeholders.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: domainforge
+      POSTGRES_PASSWORD: change-me
+      POSTGRES_DB: domainforge
+    ports: ["5433:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U domainforge"]
+      interval: 5s
+      retries: 10
+volumes:
+  pgdata:
