@@ -11,7 +11,7 @@
   },
   "vars": {
     // Replace with your Render service URL (no trailing slash) before deploying.
-    "API_ORIGIN": "https://REPLACE-WITH-YOUR-RENDER-SERVICE.onrender.com"
+    "API_ORIGIN": "https://domainforge-api-nm0d.onrender.com"
   }
   // Secret (not stored here): npx wrangler secret put PROXY_SHARED_SECRET
 }
